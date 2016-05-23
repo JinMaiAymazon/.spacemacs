@@ -24,7 +24,6 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     ;; better-defaults
      emacs-lisp
      git
      markdown
@@ -34,19 +33,14 @@ values."
             shell-default-position 'bottom
             shell-default-shell 'eshell
             shell-enable-smart-eshell t)
-     ;; spell-checking
      syntax-checking
      version-control
      github
-     ;; (python :variables python-enable-yapf-format-on-save t)
      python
      django
      html
      javascript
-     (chinese :variables
-              chinese-enable-youdao-dict t)
      chrome
-     ;; themes-megapack
      deft
      )
    ;; List of additional packages that will be installed without being
@@ -102,21 +96,20 @@ values."
    dotspacemacs-startup-lists '(recents projects)
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
-   dotspacemacs-startup-recent-list-size 5
+   dotspacemacs-startup-recent-list-size 10
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(leuven
-                         monokai)
+   dotspacemacs-themes '(monokai)
 
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -127,10 +120,10 @@ values."
    dotspacemacs-emacs-leader-key "C-SPC"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
-   dotspacemacs-major-mode-leader-key ","
+   dotspacemacs-major-mode-leader-key nil
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m)
-   dotspacemacs-major-mode-emacs-leader-key "C-,"
+   dotspacemacs-major-mode-emacs-leader-key nil
    ;; These variables control whether separate commands are bound in the GUI to
    ;; the key pairs C-i, TAB and C-m, RET.
    ;; Setting it to a non-nil value, allows for separate commands under <C-i>
@@ -197,7 +190,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -259,8 +252,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq deft-directory
-        "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/")
-  (setq undo-tree-auto-save-history t))
+        "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
