@@ -120,10 +120,10 @@ values."
    dotspacemacs-emacs-leader-key "C-SPC"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
-   dotspacemacs-major-mode-leader-key nil
+   dotspacemacs-major-mode-leader-key ","
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m)
-   dotspacemacs-major-mode-emacs-leader-key nil
+   dotspacemacs-major-mode-emacs-leader-key "C-,"
    ;; These variables control whether separate commands are bound in the GUI to
    ;; the key pairs C-i, TAB and C-m, RET.
    ;; Setting it to a non-nil value, allows for separate commands under <C-i>
@@ -242,6 +242,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setenv "LC_CTYPE" "UTF-8")
+  (setenv "LC_ALL" "en_US.UTF-8")
+  (setenv "LANG" "en_US.UTF-8")
   )
 
 (defun dotspacemacs/user-config ()
@@ -264,9 +267,7 @@ you should place your code here."
  '(safe-local-variable-values
    (quote
     ((pony-settings
-      (make-pony-project :python "/usr/bin/python" :pythonpath "/Users/aymazon/WorkSpace/employee" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/employee"))
-     (pony-settings
-      (make-pony-project :python "/usr/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store_register" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store_register"))))))
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/employee" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/employee"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
