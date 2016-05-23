@@ -267,6 +267,8 @@ you should place your code here."
  '(safe-local-variable-values
    (quote
     ((pony-settings
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store_register" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store_register"))
+     (pony-settings
       (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/employee" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/employee"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
