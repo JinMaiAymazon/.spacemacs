@@ -36,12 +36,16 @@ values."
      syntax-checking
      version-control
      github
-     python
+     (python :variables
+             python-auto-set-local-pyenv-version "on-project-switch"
+             python-enable-yapf-format-on-save t)
      django
      html
      javascript
      chrome
      deft
+     sql
+     selectric
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -109,7 +113,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -186,11 +190,11 @@ values."
    dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native nil
+   dotspacemacs-fullscreen-use-non-native t
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -208,7 +212,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -243,8 +247,9 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setenv "LC_CTYPE" "UTF-8")
-  (setenv "LC_ALL" "en_US.UTF-8")
-  (setenv "LANG" "en_US.UTF-8")
+  (setenv "LC_ALL" "zh_CN.UTF-8")
+  (setenv "LANG" "zh_CN.UTF-8")
+  (setq exec-path-from-shell-check-startup-files nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -255,7 +260,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq deft-directory
-        "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/"))
+        "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/")
+
+
+  (setq google-translate-base-url "https://translate.google.cn/translate_a/single")
+
+  (setq google-translate-listen-url "https://translate.google.cn/translate_tts")
+  (setq google-translate--tkk-url "https://translate.google.cn/")
+  (setq google-translate-default-source-language "en")
+  (setq google-translate-default-target-language "zh-CN"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -267,6 +280,12 @@ you should place your code here."
  '(safe-local-variable-values
    (quote
     ((pony-settings
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store"))
+     (pony-settings
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/business" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/business"))
+     (pony-settings
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/business" :settings "/Users/aymazon/WorkSpace/business/business_site/settings.py" :appsdir "/Users/aymazon/WorkSpace/business"))
+     (pony-settings
       (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store_register" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store_register"))
      (pony-settings
       (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/employee" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/employee"))))))
