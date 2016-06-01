@@ -27,6 +27,7 @@ values."
      emacs-lisp
      git
      markdown
+     spell-checking
      org
      (shell :variables
             shell-default-height 30
@@ -247,8 +248,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setenv "LC_CTYPE" "UTF-8")
-  (setenv "LC_ALL" "zh_CN.UTF-8")
-  (setenv "LANG" "zh_CN.UTF-8")
+  (setenv "LC_ALL" "en_us.UTF-8")
+  (setenv "LANG" "en_us.UTF-8")
   (setq exec-path-from-shell-check-startup-files nil)
   )
 
