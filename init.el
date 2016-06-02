@@ -27,13 +27,14 @@ values."
      emacs-lisp
      git
      markdown
-     spell-checking
      org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'eshell
-            shell-enable-smart-eshell t)
+            shell-default-shell 'shell
+            )
+            ;; shell-default-shell 'eshell
+            ;; shell-enable-smart-eshell t)
      syntax-checking
      version-control
      github
@@ -46,7 +47,7 @@ values."
      chrome
      deft
      sql
-     selectric
+     ;; spell-checking
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
