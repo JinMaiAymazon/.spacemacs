@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_datetimes
+# key: dodatetimes
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.datetimes($1)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_update_or_create
+# key: doupdate_or_create
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.update_or_create($1)

@@ -3,4 +3,4 @@
 # key: dofilter
 # group: django_objects
 # --
-objects.filter($1)
+`(delete-backward-char 1)`objects.filter($1)

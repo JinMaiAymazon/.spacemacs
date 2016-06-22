@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_exclude
+# key: doexclude
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.exclude($1)

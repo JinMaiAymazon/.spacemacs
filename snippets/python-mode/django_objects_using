@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_using
+# key: dousing
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.using($1)

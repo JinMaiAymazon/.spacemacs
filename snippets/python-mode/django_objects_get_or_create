@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_get_or_create
+# key: doget_or_create
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.get_or_create($1)

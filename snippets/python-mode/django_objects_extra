@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_extra
+# key: doextra
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.extra($1)

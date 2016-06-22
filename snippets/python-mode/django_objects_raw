@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_raw
+# key: doraw
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.raw($1)

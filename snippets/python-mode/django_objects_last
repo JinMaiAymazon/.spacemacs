@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_last
+# key: dolast
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.last()

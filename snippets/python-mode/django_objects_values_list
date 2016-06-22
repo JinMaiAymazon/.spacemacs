@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_values_list
+# key: dovalues_list
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.values_list($1)

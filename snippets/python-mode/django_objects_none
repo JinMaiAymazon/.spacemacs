@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_none
+# key: donone
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.none()

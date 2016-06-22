@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_defer
+# key: dodefer
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.defer($1)

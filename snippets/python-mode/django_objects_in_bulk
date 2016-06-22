@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_in_bulk
+# key: doin_bulk
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.in_bulk($1)

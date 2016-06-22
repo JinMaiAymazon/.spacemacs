@@ -3,4 +3,4 @@
 # key: doall
 # group: django_objects
 # --
-objects.all()
+`(delete-backward-char 1)`objects.all()

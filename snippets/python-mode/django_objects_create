@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_create
+# key: docreate
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.create($1)

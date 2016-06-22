@@ -3,4 +3,4 @@
 # key: dofirst
 # group: django_objects
 # --
-objects.first()
+`(delete-backward-char 1)`objects.first()

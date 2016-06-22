@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_order_by
+# key: doorder_by
+# group: django_objects
+# --
+`(delete-backward-char 1)`objects.order_by($1)
