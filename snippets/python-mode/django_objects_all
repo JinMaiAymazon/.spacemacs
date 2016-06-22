@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_all
+# key: doall
+# group: django_objects
+# --
+objects.all()

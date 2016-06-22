@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: assert_issubclass
+# key: asis
+# group: testing
+# --
+assert issubclass($1.__class__, $2)

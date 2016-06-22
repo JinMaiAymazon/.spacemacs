@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: assert_isinstance
+# key: asii
+# group: testing
+# --
+assert isinstance($1, $2)

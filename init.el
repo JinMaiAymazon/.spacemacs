@@ -23,8 +23,20 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence "jk"
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets")
      emacs-lisp
+     semantic
+     (eyebrowse :variables
+                eyebrowse-display-help nil)
+     dash
      git
      markdown
      org
@@ -47,6 +59,8 @@ values."
      chrome
      deft
      sql
+     php
+     chinese
      ;; spell-checking
      )
    ;; List of additional packages that will be installed without being
@@ -115,10 +129,10 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 19
+                               :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -196,7 +210,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -214,7 +228,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -249,8 +263,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setenv "LC_CTYPE" "UTF-8")
-  (setenv "LC_ALL" "en_us.UTF-8")
-  (setenv "LANG" "en_us.UTF-8")
+  (setenv "LC_ALL" "zh_CN.UTF-8")
+  (setenv "LANG" "zh_CN.UTF-8")
   (setq exec-path-from-shell-check-startup-files nil)
   )
 
@@ -264,13 +278,13 @@ you should place your code here."
   (setq deft-directory
         "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/")
 
-
+  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 13 13)
   (setq google-translate-base-url "https://translate.google.cn/translate_a/single")
-
   (setq google-translate-listen-url "https://translate.google.cn/translate_tts")
   (setq google-translate--tkk-url "https://translate.google.cn/")
   (setq google-translate-default-source-language "en")
-  (setq google-translate-default-target-language "zh-CN"))
+  (setq google-translate-default-target-language "zh-CN")
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -282,15 +296,7 @@ you should place your code here."
  '(safe-local-variable-values
    (quote
     ((pony-settings
-      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store"))
-     (pony-settings
-      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/business" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/business"))
-     (pony-settings
-      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/business" :settings "/Users/aymazon/WorkSpace/business/business_site/settings.py" :appsdir "/Users/aymazon/WorkSpace/business"))
-     (pony-settings
-      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/store_register" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/store_register"))
-     (pony-settings
-      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "/Users/aymazon/WorkSpace/employee" :settings "settings" :appsdir "/Users/aymazon/WorkSpace/employee"))))))
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "~/WorkSpace/shop" :settings "settings" :appsdir nil))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

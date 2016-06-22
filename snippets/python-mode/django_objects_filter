@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_filter
+# key: dofilter
+# group: django_objects
+# --
+objects.filter($1)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: django_objects_first
+# key: dofirst
+# group: django_objects
+# --
+objects.first()
