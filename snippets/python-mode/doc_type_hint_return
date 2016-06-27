@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: doc_type_hints_return
+# key: dthr
+# group: doc_type_hints
+# --
+:return: $2
+:rtype: $1$3

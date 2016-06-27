@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: doc_type_hints_type
+# key: dtht
+# group: doc_type_hints
+# --
+:type $1: $3

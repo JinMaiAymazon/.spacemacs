@@ -29,7 +29,7 @@ values."
                       auto-completion-complete-with-key-sequence "jk"
                       auto-completion-complete-with-key-sequence-delay 0.1
                       auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets")
      emacs-lisp
@@ -51,7 +51,7 @@ values."
      version-control
      github
      (python :variables
-             python-auto-set-local-pyenv-version "on-project-switch"
+             ;; python-auto-set-local-pyenv-version "on-project-switch"
              python-enable-yapf-format-on-save t)
      django
      html
@@ -60,6 +60,7 @@ values."
      deft
      sql
      php
+     gtags
      chinese
      ;; spell-checking
      )
@@ -92,7 +93,7 @@ values."
    ;; (default t)
    dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
-   dotspacemacs-elpa-timeout 5
+   dotspacemacs-elpa-timeout 10
    ;; If non nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. (default t)
    dotspacemacs-check-for-update t
@@ -275,15 +276,20 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 13 16)
+  (global-pangu-spacing-mode 0)
   (setq deft-directory
         "/Users/aymazon/Library/Mobile Documents/com~apple~CloudDocs/notes/")
-
-  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 13 13)
   (setq google-translate-base-url "https://translate.google.cn/translate_a/single")
   (setq google-translate-listen-url "https://translate.google.cn/translate_tts")
   (setq google-translate--tkk-url "https://translate.google.cn/")
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "zh-CN")
+  (setq company-idle-delay 0.01
+        company-minimum-prefix-length 1
+        company-require-match nil
+        company-dabbrev-ignore-case nil
+        company-dabbrev-downcase nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
