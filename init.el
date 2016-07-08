@@ -51,8 +51,8 @@ values."
      version-control
      github
      (python :variables
-             ;; python-auto-set-local-pyenv-version "on-project-switch"
-             python-enable-yapf-format-on-save t)
+             python-auto-set-local-pyenv-version "on-project-switch")
+             ;; python-enable-yapf-format-on-save t)
      django
      html
      javascript
@@ -302,6 +302,8 @@ you should place your code here."
  '(safe-local-variable-values
    (quote
     ((pony-settings
+      (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "~/WorkSpace/jinmailife" :settings "settings" :appsdir nil))
+     (pony-settings
       (make-pony-project :python "~/.pyenv/versions/3.4.4/bin/python" :pythonpath "~/WorkSpace/shop" :settings "settings" :appsdir nil))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
